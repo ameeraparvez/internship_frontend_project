@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Modern responsive landing page built using HTML5 and CSS3."/>
+  <title>NovaTech | Modern Landing Page</title>
+
+  <!-- Google Fonts: Outfit (display) + Sora (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome 6 (free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════
+       CUSTOM CURSOR
+  ════════════════════════════════════════════ -->
+  <div class="cursor-dot"    id="cursorDot"></div>
+  <div class="cursor-ring"   id="cursorRing"></div>
+
+  <!-- ════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════ -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="NovaTech home">
+        <span class="logo-icon"><i class="fa-solid fa-hexagon-nodes"></i></span>
+        <span class="logo-text">Nova<em>Tech</em></span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+        <li><a href="#home"     class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA + hamburger -->
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-ghost">Log in</a>
+        <a href="#contact" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <ul>
+        <li><a href="#home"     onclick="closeDrawer()">Home</a></li>
+        <li><a href="#features" onclick="closeDrawer()">Features</a></li>
+        <li><a href="#about"    onclick="closeDrawer()">About</a></li>
+        <li><a href="#contact"  onclick="closeDrawer()">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary full" onclick="closeDrawer()">Get Started →</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════ -->
+    <section id="home" class="hero">
+
+      <!-- Animated canvas background -->
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+      <!-- Floating gradient blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <!-- Grid overlay -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!-- Badge -->
+        <div class="hero-badge" data-aos>
+          <span class="badge-dot"></span>
+          Modern Web Solutions &nbsp;·&nbsp; for the Future
+          <i class="fa-solid fa-arrow-right badge-arrow"></i>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="hero-heading" data-aos data-aos-delay="100">
+          Build Modern Digital Experiences<br>
+          <span class="gradient-text">With Creative Technology</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p class="hero-sub" data-aos data-aos-delay="200">
+          We create stunning modern websites and digital<br>
+          solutions that help startups and creators grow faster online.
+        </p>
+
+        <!-- CTA row -->
+        <div class="hero-cta" data-aos data-aos-delay="300">
+          <a href="#contact" class="btn btn-glow">
+            <span>Get Started</span>
+            <i class="fa-solid fa-rocket"></i>
+          </a>
+          <a href="#features" class="btn btn-outline">
+            <i class="fa-regular fa-circle-play"></i>
+            <span>Explore Features</span>
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <div class="hero-proof" data-aos data-aos-delay="400">
+          <div class="avatar-stack" aria-hidden="true">
+            <div class="av av1">S</div>
+            <div class="av av2">M</div>
+            <div class="av av3">R</div>
+            <div class="av av4">T</div>
+          </div>
+          <p><strong>500+</strong> Happy Clients Worldwide</p>
+        </div>
+
+        <!-- Abstract hero visual -->
+        <div class="hero-visual" data-aos data-aos-delay="150" aria-hidden="true">
+          <div class="orb-ring r1"></div>
+          <div class="orb-ring r2"></div>
+          <div class="orb-ring r3"></div>
+          <div class="orb-core">
+            <i class="fa-solid fa-hexagon-nodes"></i>
+          </div>
+          <!-- floating chips -->
+          <div class="chip chip-a"><i class="fa-solid fa-bolt"></i> 99.9% uptime</div>
+          <div class="chip chip-b"><i class="fa-solid fa-shield-halved"></i> SOC 2</div>
+          <div class="chip chip-c"><i class="fa-solid fa-gauge-high"></i> 24ms p99</div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         FEATURES SECTION
+    ════════════════════════════════════════════ -->
+    <section id="features" class="features">
+      <div class="section-container">
+
+        <div class="section-label" data-aos>
+          <i class="fa-solid fa-stars"></i> Core Features
+        </div>
+        <h2 class="section-heading" data-aos data-aos-delay="80">
+          Everything You Need<br>
+          <span class="gradient-text">For A Powerful Website</span>
+        </h2>
+        <p class="section-desc" data-aos data-aos-delay="160">
+          Every primitive you need. Nothing that gets in your way.
+        </p>
+
+        <!-- Feature cards grid -->
+        <div class="features-grid">
+
+          <div class="feat-card" data-aos data-aos-delay="0">
+            <div class="feat-card-glow"></div>
+            <div class="feat-icon-wrap accent-blue">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+            <h3>Fast Performance</h3>
+            <p>Push your code and go live in under 10 seconds. Zero-downtime deploys with automatic rollback on every failure.</p>
+            <div class="feat-tag">
+              <i class="fa-solid fa-arrow-trend-up"></i> 10× faster
+            </div>
+          </div>
+
+          <div class="feat-card" data-aos data-aos-delay="80">
+            <div class="feat-card-glow"></div>
+            <div class="feat-icon-wrap accent-purple">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Secure Platform</h3>
+            <p>Enterprise-grade encryption, continuous threat monitoring, and automated compliance for SOC 2, GDPR, and ISO 27001.</p>
+            <div class="feat-tag">
+              <i class="fa-solid fa-lock"></i> Always encrypted
+            </div>
+          </div>
+
+          <div class="feat-card" data-aos data-aos-delay="160">
+            <div class="feat-card-glow"></div>
+            <div class="feat-icon-wrap accent-teal">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Analytics Dashboard</h3>
+            <p>Real-time metrics, distributed tracing, and intelligent alerting — all in a single unified dashboard that actually makes sense.</p>
+            <div class="feat-tag">
+              <i class="fa-solid fa-eye"></i> Full visibility
+            </div>
+          </div>
+
+          <div class="feat-card" data-aos data-aos-delay="240">
+            <div class="feat-card-glow"></div>
+            <div class="feat-icon-wrap accent-amber">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3>Easy Integration</h3>
+            <p>Modular by design. Integrate with your existing stack in minutes using 200+ native connectors and a first-class API.</p>
+            <div class="feat-tag">
+              <i class="fa-solid fa-plug"></i> 200+ integrations
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         ABOUT / STATS SECTION
+    ════════════════════════════════════════════ -->
+    <section id="about" class="stats-section">
+      <div class="section-container">
+
+        <div class="stats-layout">
+
+          <!-- Left: copy -->
+          <div class="stats-copy">
+            <div class="section-label" data-aos>
+              <i class="fa-solid fa-chart-bar"></i> By the numbers
+            </div>
+            <h2 class="section-heading left" data-aos data-aos-delay="80">
+              Trusted by<br>
+              <span class="gradient-text"> Creative Businesses</span>
+            </h2>
+            <p class="section-desc left" data-aos data-aos-delay="160">
+              From indie hackers to Fortune 500s — NovaTech powers critical infrastructure for organizations that can't afford to blink.
+            </p>
+            <a href="#contact" class="btn btn-glow slim" data-aos data-aos-delay="240">
+              Start for free <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Right: stat grid -->
+          <div class="stats-grid">
+            <div class="stat-card" data-aos data-aos-delay="0">
+              <div class="stat-num" data-target="500" data-suffix="+">0</div>
+              <div class="stat-label">Active teams</div>
+              <div class="stat-bar"><div class="stat-bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="stat-card" data-aos data-aos-delay="80">
+              <div class="stat-num" data-target="99" data-suffix="%">0</div>
+              <div class="stat-label">Satisfaction score</div>
+              <div class="stat-bar"><div class="stat-bar-fill" style="--w:99%"></div></div>
+            </div>
+            <div class="stat-card" data-aos data-aos-delay="160">
+              <div class="stat-num" data-target="24" data-suffix="/7">0</div>
+              <div class="stat-label">Expert support</div>
+              <div class="stat-bar"><div class="stat-bar-fill" style="--w:100%"></div></div>
+            </div>
+            <div class="stat-card" data-aos data-aos-delay="240">
+              <div class="stat-num" data-target="999" data-suffix="%">0</div>
+              <div class="stat-label">Uptime SLA</div>
+              <div class="stat-bar"><div class="stat-bar-fill" style="--w:99.9%"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         CTA SECTION
+    ════════════════════════════════════════════ -->
+    <section id="contact" class="cta-section">
+      <!-- Gradient mesh background -->
+      <div class="cta-bg" aria-hidden="true">
+        <div class="cta-blob b1"></div>
+        <div class="cta-blob b2"></div>
+      </div>
+
+      <div class="section-container cta-inner">
+        <div class="cta-badge" data-aos>
+          <i class="fa-solid fa-circle-bolt"></i> No credit card required
+        </div>
+        <h2 class="cta-heading" data-aos data-aos-delay="80">
+          Ready to build something<br>
+          <span class="gradient-text">the world hasn't seen?</span>
+        </h2>
+        <p class="cta-sub" data-aos data-aos-delay="160">
+          Join hundreds of businesses and creators already growing with our modern web solutions.
+        </p>
+
+        <!-- Email form -->
+        <div class="cta-form" data-aos data-aos-delay="240">
+          <div class="form-pill">
+            <i class="fa-regular fa-envelope form-icon"></i>
+            <input type="email" id="emailInput" placeholder="Enter your work email…" autocomplete="email" aria-label="Work email"/>
+            <button type="button" class="pill-btn" onclick="handleSignup()">
+              Join Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <p class="form-note" id="formNote"></p>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="trust-badges" data-aos data-aos-delay="320">
+          <span><i class="fa-solid fa-shield-check"></i> SOC 2 Type II</span>
+          <span><i class="fa-solid fa-globe"></i> GDPR Ready</span>
+          <span><i class="fa-solid fa-lock"></i> End-to-end Encrypted</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Top row -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo" aria-label="NovaTech">
+            <span class="logo-icon"><i class="fa-solid fa-hexagon-nodes"></i></span>
+            <span class="logo-text">Nexa<em>OS</em></span>
+          </a>
+          <p>Creating modern and responsive digital experiences using HTML5 & CSS3.</p>
+          <!-- Social icons -->
+          <div class="social-row">
+            <a href="#" class="social-btn" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <ul>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Changelog</a></li>
+              <li><a href="#">Roadmap</a></li>
+              <li><a href="#">Status</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Developers</h5>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">API Reference</a></li>
+              <li><a href="#">SDK</a></li>
+              <li><a href="#">Open Source</a></li>
+              <li><a href="#">CLI</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Bottom row -->
+      <div class="footer-bottom">
+        <p>© 2025 NovaTech. All Rights Reserved.</p>
+        <p>Crafted with <i class="fa-solid fa-heart" style="color:#c084fc;font-size:11px"></i> for builders everywhere.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
